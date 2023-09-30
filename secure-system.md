@@ -7,10 +7,16 @@
 asmlinkage long lock(
   int syscall_id; //ID of the target syscall
   char * filename; //executable file name
+  int pwd; //set pwd
 ); //make <filename> can use <syscall_id>
 
 asmlinkage long unlock(
   int syscall_id; //ID of the target syscall
   char * filename; //executable file name
+  int pwd; //set pwd
 ); //make <filename> can't use <syscall_id>
 ```
+其中pwd是动态的；
+
+同时提高部分文件权限
+
